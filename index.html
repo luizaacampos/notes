@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotações</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container-notes">
+    </div><!--container-notes-->
+    
+<div class="btn-add">
+    <strong>+</strong>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(function(){
+        $('.btn-add').click(function(){
+            var el = '<div class="note-single"><textarea></textarea></div>';
+            $('.container-notes').append(el);
+
+            var textArea = $('.note-single').last().find('textarea');
+
+            var date = new Date();
+            var hh = date.getHours()
+            var mm = date.getMinutes()
+
+            var finalTime = hh+":"+mm
+            textArea.html(finalTime)
+        })
+    })
+</script>
+</body>
+</html>
